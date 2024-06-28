@@ -1,6 +1,10 @@
 {
   "name": "todo-app",
-  "version": "1.0.9",
+  "version": "1.1.0",
+  "description": "A modern, responsive To-Do app built with Next.js, TailwindCSS, and TypeScript. The app supports dark mode and allows users to manage tasks with priority levels and due dates.",
+  "keywords": [],
+  "author": "birajrai",
+  "license": "ISC",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -8,8 +12,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.12",
     "autoprefixer": "latest",
     "next": "latest",
+    "next-seo": "^6.5.0",
     "postcss": "latest",
     "react": "latest",
     "react-cookie": "^7.0.0",
@@ -27,10 +33,5 @@
     "eslint": "latest",
     "eslint-config-next": "latest",
     "jest": "latest"
-  },
-  "description": "A modern, responsive To-Do app built with Next.js, TailwindCSS, and TypeScript. The app supports dark mode and allows users to manage tasks with priority levels and due dates.",
-  "main": "postcss.config.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
