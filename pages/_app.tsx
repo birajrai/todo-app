@@ -4,6 +4,8 @@ import { TaskProvider } from '../contexts/TaskContext';
 import { useState, useEffect } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
+
 function MyApp({ Component, pageProps }: AppProps) {
     const [darkMode, setDarkMode] = useState(false);
 
@@ -38,6 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </div>
             <Component {...pageProps} />
             <SpeedInsights />
+            <Analytics />
         </TaskProvider>
     );
 }
