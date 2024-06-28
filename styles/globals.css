@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-nord-6 text-nord-0 transition-colors duration-300;
+}
+
+body.dark {
+  @apply bg-nord-0 text-nord-6;
+}
