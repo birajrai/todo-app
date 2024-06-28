@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import { TaskProvider } from '../contexts/TaskContext';
 import { useState, useEffect } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 function MyApp({ Component, pageProps }: AppProps) {
     const [darkMode, setDarkMode] = useState(false);
 
@@ -37,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </button>
             </div>
             <Component {...pageProps} />
+            <SpeedInsights />
         </TaskProvider>
     );
 }
