@@ -11,6 +11,8 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
   const { deleteTask, updateTask } = useTaskContext();
   const [isEditing, setIsEditing] = useState(false);
 
+  if (!task) return null; // Skip rendering if task is undefined
+
   const toggleCompleted = () => {
     updateTask({ ...task, completed: !task.completed });
   };
@@ -22,6 +24,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
         <p>{task.description}</p>
         <p>Priority: {task.priority}</p>
         <p>Due: {task.dueDate}</p>
+        <p>Status: {task.completed ? 'Done' : 'Incomplete'}</p>
       </div>
       <div>
         <button onClick={toggleCompleted} className={`p-1 rounded mr-2 ${task.completed ? 'bg-green-500 text-white' : 'bg-gray-300'}`}>
