@@ -18,22 +18,22 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
   };
 
   return (
-    <div className={`flex items-center justify-between p-2 border-b border-gray-300 ${task.completed ? 'bg-gray-200' : ''}`}>
-      <div>
+    <div className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 border-b border-nord-3 dark:border-nord-2 bg-nord-5 dark:bg-nord-0 ${task.completed ? 'bg-opacity-50' : ''}`}>
+      <div className="flex-1">
         <h3 className="text-lg">{task.title}</h3>
         <p>{task.description}</p>
         <p>Priority: {task.priority}</p>
         <p>Due: {task.dueDate}</p>
         <p>Status: {task.completed ? 'Done' : 'Incomplete'}</p>
       </div>
-      <div>
-        <button onClick={toggleCompleted} className={`p-1 rounded mr-2 ${task.completed ? 'bg-green-500 text-white' : 'bg-gray-300'}`}>
+      <div className="flex mt-2 sm:mt-0">
+        <button onClick={toggleCompleted} className={`p-2 rounded mr-2 ${task.completed ? 'bg-nord-7 text-nord-6 dark:text-nord-0' : 'bg-nord-3 dark:bg-nord-2 text-nord-6 dark:text-nord-0'}`}>
           {task.completed ? 'Undone' : 'Done'}
         </button>
-        <button onClick={() => setIsEditing(true)} className="bg-yellow-500 text-white p-1 rounded mr-2">
+        <button onClick={() => setIsEditing(true)} className="bg-nord-12 text-nord-6 dark:text-nord-0 p-2 rounded mr-2">
           Edit
         </button>
-        <button onClick={() => deleteTask(task.id)} className="bg-red-500 text-white p-1 rounded">
+        <button onClick={() => deleteTask(task.id)} className="bg-nord-11 text-nord-6 dark:text-nord-0 p-2 rounded">
           Delete
         </button>
       </div>
