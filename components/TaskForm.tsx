@@ -26,25 +26,25 @@ const TaskForm: React.FC<TaskFormProps> = ({ task, onClose }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-4 rounded shadow-md">
+      <div className="bg-nord-6 dark:bg-nord-1 p-4 rounded shadow-md w-full max-w-lg mx-2">
         <h2 className="text-xl mb-4">{task ? 'Edit Task' : 'New Task'}</h2>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Title"
-          className="w-full mb-2 p-2 border border-gray-300 rounded"
+          className="w-full mb-2 p-2 border border-nord-3 dark:border-nord-2 rounded bg-nord-5 dark:bg-nord-0 text-nord-0 dark:text-nord-6"
         />
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Description"
-          className="w-full mb-2 p-2 border border-gray-300 rounded"
+          className="w-full mb-2 p-2 border border-nord-3 dark:border-nord-2 rounded bg-nord-5 dark:bg-nord-0 text-nord-0 dark:text-nord-6"
         />
         <select
           value={priority}
           onChange={(e) => setPriority(e.target.value as 'low' | 'medium' | 'high')}
-          className="w-full mb-2 p-2 border border-gray-300 rounded"
+          className="w-full mb-2 p-2 border border-nord-3 dark:border-nord-2 rounded bg-nord-5 dark:bg-nord-0 text-nord-0 dark:text-nord-6"
         >
           <option value="low">Low</option>
           <option value="medium">Medium</option>
@@ -54,14 +54,16 @@ const TaskForm: React.FC<TaskFormProps> = ({ task, onClose }) => {
           type="date"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
-          className="w-full mb-2 p-2 border border-gray-300 rounded"
+          className="w-full mb-2 p-2 border border-nord-3 dark:border-nord-2 rounded bg-nord-5 dark:bg-nord-0 text-nord-0 dark:text-nord-6"
         />
-        <button onClick={handleSubmit} className="bg-blue-500 text-white p-2 rounded">
-          {task ? 'Update' : 'Add'}
-        </button>
-        <button onClick={onClose} className="bg-red-500 text-white p-2 rounded ml-2">
-          Cancel
-        </button>
+        <div className="flex justify-end">
+          <button onClick={handleSubmit} className="bg-nord-8 text-nord-6 dark:text-nord-0 p-2 rounded mr-2">
+            {task ? 'Update' : 'Add'}
+          </button>
+          <button onClick={onClose} className="bg-nord-11 text-nord-6 dark:text-nord-0 p-2 rounded">
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   );
