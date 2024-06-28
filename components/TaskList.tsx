@@ -14,9 +14,10 @@ const TaskList: React.FC = () => {
                 Add Task
             </button>
             <div className="space-y-2">
-                {tasks.map(task => (
-                    <TaskItem key={task.id} task={task} />
-                ))}
+                {tasks.map(task => {
+                    if (!task) return null; // Skip if task is undefined
+                    return <TaskItem key={task.id} task={task} />;
+                })}
             </div>
             {isAdding && <TaskForm onClose={() => setIsAdding(false)} />}
         </div>
